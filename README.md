@@ -21,6 +21,14 @@ Estimate Transformer attention FLOPs, KV cache size, and decode memory pressure 
 attention-cost --preset llama3-8b --seq-len 8192
 ```
 
+### [fpga-attention-tile-planner](https://github.com/jiakai03177-coder/fpga-attention-tile-planner)
+
+Plan self-attention query/key tile sizes for FPGA and accelerator SRAM budgets.
+
+```bash
+attention-tiles --preset llama3-8b --seq-len 4096 --sram-kib 512
+```
+
 ### [repo-context-packer](https://github.com/jiakai03177-coder/repo-context-packer)
 
 Generate compact AI-ready context packs for codebases so coding agents can understand a repo before editing it.
@@ -34,7 +42,7 @@ repo-context-packer --token-budget 8000
 I am especially interested in the path from algorithm shape to hardware-aware execution:
 
 ```text
-Transformer architecture -> attention/KV cache cost -> memory bandwidth pressure -> acceleration strategy
+Transformer architecture -> attention/KV cache cost -> memory bandwidth pressure -> tile planning -> acceleration strategy
 ```
 
 ## Tech
